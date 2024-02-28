@@ -21,5 +21,15 @@ public class Main {
       return "%s".formatted(myString);
     });
 
+    execute(firstNames, functions);
+
+  }
+
+  public static void execute(List<String> names, List<UnaryOperator<String>> functions) {
+    for (var function : functions) {
+      names.forEach(function::apply);
+    }
+
+    System.out.print(names);
   }
 }
